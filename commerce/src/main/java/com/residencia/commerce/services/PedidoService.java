@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.residencia.commerce.entities.Pedido;
+import com.residencia.commerce.entity.Pedido;
 import com.residencia.commerce.repositories.PedidoRepository;
 
 @Service
@@ -13,27 +13,27 @@ public class PedidoService {
 	@Autowired
 	PedidoRepository pedidoRepository;
 	
-	public List<Pedido> findAll() {
+	public List<Pedido> findAllPedido() {
 		return pedidoRepository.findAll();
 	}
 	
-	public Pedido findById(Integer id) {
+	public Pedido findByIdPedido(Integer id) {
 		return pedidoRepository.findById(id).isPresent() ? pedidoRepository.findById(id).get() : null;
 	}
 	
-	public Pedido save(Pedido pedido) {
+	public Pedido savePedido(Pedido pedido) {
 		return pedidoRepository.save(pedido);
 	}
 	
-	public Pedido update(Pedido pedido) {
+	public Pedido updatePedido(Pedido pedido) {
 		return pedidoRepository.save(pedido);
 	}
 	
-	public void delete(Pedido pedido) {
+	public void deletePedido(Pedido pedido) {
 		pedidoRepository.delete(pedido);
 	}
 
-	public void deletePorId(Integer id) {
+	public void deletePedidoPorId(Integer id) {
 		pedidoRepository.deleteById(id);
 	}
 
